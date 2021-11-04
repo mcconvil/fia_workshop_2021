@@ -1,0 +1,33 @@
+name: "ML Surveys Workshop"
+output_dir: "docs"
+navbar:
+  title: "Machine Learning in Survey Estimation Workshop"
+  right:
+    - text: "Homepage"
+      href: index.html
+      icon: fa-home
+    - text: "Outline"
+      href: outline.html
+      icon: fa-calendar       
+    - text: "Slides"
+      icon: fa-area-chart
+      menu:
+        - text: "Setting the Stage"
+          href: stage.html            
+        - text: "Model-Assisted Estimation"
+          href: data_setup.html      
+        - text: "Estimator Deep Dive"
+          href: estimator_deep_dive.html
+        - text: "Case Studies"
+          href: case_studies.html
+        - text: "Applications in R with mase"
+          href: mase_R.html 
+    - text: "About the Presenter"
+      href: about2.html
+      icon: fa-user-circle-o
+  type: default       
+output:
+  html_document:
+    css: style.css  
+    theme: united
+    highlight: tango
