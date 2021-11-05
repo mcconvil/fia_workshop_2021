@@ -22,7 +22,7 @@ navbar:
           href: case_studies.html
         - text: "Applications in R with mase"
           href: mase_R.html 
-    - text: "About the Presenter"
+    - text: "About the Facilitators"
       href: about2.html
       icon: fa-user-circle-o
   type: default       
