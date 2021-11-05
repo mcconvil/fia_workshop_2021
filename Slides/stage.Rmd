@@ -77,7 +77,7 @@ background-color: #CFF09E
 
 --
 
-### Give your npme, affiliation, and your current location!
+### Give your name, affiliation, and your current location!
 
 ---
 
