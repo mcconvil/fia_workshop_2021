@@ -33,7 +33,7 @@ library(tidyverse)
 ```
 
 class: center, middle
-background-image: url("img/andy-holmes-oEIFOoC3gi0-unsplash.jpg")
+background-image: url("img/aspens_fall.jpg")
 background-position: left
 background-size: contain
 background-color: #e9ecef
@@ -43,14 +43,20 @@ background-color: #e9ecef
 ## Setting the Stage
 
 
-#### A Data Science Approach to Official Statistics Estimation: Leveraging the Power of Machine Learning Models
+#### A Data Science Approach to Model-Assisted Estimation
 
-#### 2021 International Methodology Symposium
+#### 2021 FIA Workshop
 
 #### Kelly McConville
 
-#### October 14, 2021
+#### November 8th, 2021
 
+<br>
+
+<br>
+
+
+[Photos in the slide decks are courtesy of IWFIA staff](https://www.flickr.com/people/142650051@N06/)
 
 ]
 
@@ -71,13 +77,13 @@ background-color: #CFF09E
 
 --
 
-### Give your name, where you work, and your current location!
+### Give your npme, affiliation, and your current location!
 
 ---
 
 
 class: center, middle
-background-image: url("img/brydon-mccluskey-Cp0reX9APUA-unsplash.jpg")
+background-image: url("img/saguaro_powerlifting_boulder.jpg")
 background-position: left
 background-size: contain
 background-color: #e9ecef
@@ -86,20 +92,21 @@ background-color: #e9ecef
 
 ### Roadmap of the Workshop
 
-<span style="color: #E6AC27;">10:00 am - 10:15 am ET</span> -- [Set the Stage](https://mcconvil.github.io/IMS21_ML_Surveys/stage.html)
 
-<span style="color: #E6AC27;">10:15 am - 10:50 am ET</span> -- [Overview of Model-Assisted Estimation](https://mcconvil.github.io/IMS21_ML_Surveys/data_setup.html)
+<span style="color: #E6AC27;">12:00 pm - 12:15 pm ET</span> -- [Set the Stage](https://mcconvil.github.io/IMS21_ML_Surveys/stage.html)
 
-<span style="color: #E6AC27;">10:50 am - 11:00 am ET</span> -- [Break](https://www.theguardian.com/society/video/2020/apr/24/five-easy-stretches-to-keep-you-going-when-working-from-home-video)
+<span style="color: #E6AC27;">12:15 pm - 12:45 pm ET</span> -- [Overview of Model-Assisted Estimation](https://mcconvil.github.io/IMS21_ML_Surveys/data_setup.html)
 
-<span style="color: #E6AC27;">11:00 am - 11:45 am ET</span> -- [Deep Dive into the Estimator](https://mcconvil.github.io/IMS21_ML_Surveys/estimator_deep_dive.html)
+<span style="color: #E6AC27;">12:45 pm - 12:55 pm ET</span> -- [Break](https://www.theguardian.com/society/video/2020/apr/24/five-easy-stretches-to-keep-you-going-when-working-from-home-video)
 
-<span style="color: #E6AC27;">11:45 am - 12:15 pm ET</span> -- [Lunch](https://www.theguardian.com/food/2021/apr/17/yotam-ottolenghi-15-minute-lunches-recipes)
+<span style="color: #E6AC27;">12:55 pm - 1:45 pm ET</span> -- [Deep Dive into the Estimator](https://mcconvil.github.io/IMS21_ML_Surveys/estimator_deep_dive.html)
 
-<span style="color: #E6AC27;">12:15 pm - 1:00 pm ET</span> -- [Case Studies](https://mcconvil.github.io/IMS21_ML_Surveys/case_studies.html)
+<span style="color: #E6AC27;">1:45 pm - 2:15 pm ET</span> -- [Lunch or Afternoon Snack](https://www.theguardian.com/food/2021/apr/17/yotpm-ottolenghi-15-minute-lunches-recipes)
 
-<span style="color: #E6AC27;">1:00 pm - 1:15 pm ET</span> -- [Break](https://www.psychologytoday.com/us/blog/how-be-yourself/202006/7-strategies-maximize-break-while-working-home)
+<span style="color: #E6AC27;">2:15 pm - 3:05 pm ET</span> -- [Case Studies](https://mcconvil.github.io/IMS21_ML_Surveys/case_studies.html)
 
-<span style="color: #E6AC27;">1:15 pm - 2:00 pm ET</span> -- [Applications with `R`](https://mcconvil.github.io/IMS21_ML_Surveys/mase_R.html)
+<span style="color: #E6AC27;">3:05 pm - 3:15 pm ET</span> -- [Break](https://www.psychologytoday.com/us/blog/how-be-yourself/202006/7-strategies-maximize-break-while-working-home)
+
+<span style="color: #E6AC27;">3:15 pm - 4:00 pm ET</span> -- [Applications with `R`](https://mcconvil.github.io/IMS21_ML_Surveys/mase_R.html)
 
 ]

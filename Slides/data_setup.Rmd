@@ -45,14 +45,13 @@ background-color: #e9ecef
 
 ## Model-Assisted Estimation
 
+#### A Data Science Approach to Model-Assisted Estimation
 
-#### A Data Science Approach to Official Statistics Estimation: Leveraging the Power of Machine Learning Models
-
-#### 2021 International Methodology Symposium
+#### 2021 FIA Workshop
 
 #### Kelly McConville
 
-#### October 14, 2021
+#### November 8th, 2021
 
 ]
 
@@ -71,11 +70,30 @@ class: center
 
 #### Data Needed:
 
+--
 
+```{r, echo = FALSE, out.width='80%'}
+knitr::include_graphics("img/tracey.jpg")
+```
+
+
+
+---
+
+class: center
+
+### Model-Assisted Survey Estimation
+
+
+#### **Goal**: Estimate finite population quantities, such as means and totals.
+
+
+#### Data Needed:
 
 ```{r, echo = FALSE}
 knitr::include_graphics("img/data_needs2.004.jpeg")
 ```
+
 
 ---
 
@@ -310,41 +328,15 @@ Quarterly Census of Employment and Wages:
 
 
 ---
-
 class: center, middle
-background-color: #CFF09E
-
-
-## In your breakout rooms, each person should discuss:
+background-image: url("img/rain_montana.jpg")
+background-size: contain
 
 --
 
-### The survey data you have access to.
+.pull-right[
 
---
+### What new auxiliary data do you wish to combine with FIA data to estimate forest attributes?
 
-### The auxiliary data you have access to.
-
---
-
-### If you are currently combining these data sources for estimation.
-
-<!-- --- -->
-
-<!-- ## Other case studies... -->
-
-<!-- -- -->
-
-<!-- ```{r, echo = FALSE, out.width= "15%", out.extra='style="float:left; padding:10px"'} -->
-<!-- knitr::include_graphics("img/fs.png") -->
-<!-- ``` -->
-
-<!-- ### [American Community Survey using Age and Sex for Census Tracts](https://www.census.gov/content/dam/Census/library/working-papers/2007/acs/2007_Fay_01.pdf) -->
-
-
-<!-- XXX: Find more! -->
-
-
-
-
+]
 

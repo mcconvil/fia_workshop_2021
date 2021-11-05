@@ -1,7 +1,7 @@
-name: "ML Surveys Workshop"
+name: "FIA 2021 Workshop"
 output_dir: "docs"
 navbar:
-  title: "Machine Learning in Survey Estimation Workshop"
+  title: "FIA 2021 Workshop"
   right:
     - text: "Homepage"
       href: index.html

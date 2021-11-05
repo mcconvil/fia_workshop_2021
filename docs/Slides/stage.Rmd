@@ -1,0 +1,112 @@
+---
+title: Setting the Stage
+header-includes:
+   - \usepackage{xcolor}
+output:
+  xaringan::moon_reader:
+    css: ["default", "cssSlides/styling.css", "cssSlides/fonts.css"]
+    lib_dir: libsSlides
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      navigation:
+        scroll: false      
+    seal: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, 
+                      warning = FALSE, fig.width = 6,
+                      fig.height = 4,
+                      fig.retina = 3)
+
+options(digits=2, scipen = 3)
+
+# Fix how htmlwidgets are rendered 
+# https://stackoverflow.com/questions/65766516/xaringan-presentation-not-displaying-html-widgets-even-when-knitting-provided-t
+options(htmltools.preserve.raw = FALSE)
+library(knitr)
+options(knitr.table.format = "html")
+library(tidyverse)
+```
+
+class: center, middle
+background-image: url("img/aspens_fall.jpg")
+background-position: left
+background-size: contain
+background-color: #e9ecef
+
+.pull-right[
+
+## Setting the Stage
+
+
+#### A Data Science Approach to Model-Assisted Estimation
+
+#### 2021 FIA Workshop
+
+#### Kelly McConville
+
+#### November 8th, 2021
+
+<br>
+
+<br>
+
+
+[Photos in the slide decks are courtesy of IWFIA staff](https://www.flickr.com/people/142650051@N06/)
+
+]
+
+---
+
+class: center, middle
+background-image: url("img/intro.001.jpeg")
+background-size: contain
+
+
+---
+
+class: center, middle
+background-color: #CFF09E
+
+
+# Please introduce yourself in the chat!
+
+--
+
+### Give your npme, affiliation, and your current location!
+
+---
+
+
+class: center, middle
+background-image: url("img/saguaro_powerlifting_boulder.jpg")
+background-position: left
+background-size: contain
+background-color: #e9ecef
+
+.pull-right[
+
+### Roadmap of the Workshop
+
+
+<span style="color: #E6AC27;">12:00 pm - 12:15 pm ET</span> -- [Set the Stage](https://mcconvil.github.io/IMS21_ML_Surveys/stage.html)
+
+<span style="color: #E6AC27;">12:15 pm - 12:45 pm ET</span> -- [Overview of Model-Assisted Estimation](https://mcconvil.github.io/IMS21_ML_Surveys/data_setup.html)
+
+<span style="color: #E6AC27;">12:45 pm - 12:55 pm ET</span> -- [Break](https://www.theguardian.com/society/video/2020/apr/24/five-easy-stretches-to-keep-you-going-when-working-from-home-video)
+
+<span style="color: #E6AC27;">12:55 pm - 1:45 pm ET</span> -- [Deep Dive into the Estimator](https://mcconvil.github.io/IMS21_ML_Surveys/estimator_deep_dive.html)
+
+<span style="color: #E6AC27;">1:45 pm - 2:15 pm ET</span> -- [Lunch or Afternoon Snack](https://www.theguardian.com/food/2021/apr/17/yotpm-ottolenghi-15-minute-lunches-recipes)
+
+<span style="color: #E6AC27;">2:15 pm - 3:05 pm ET</span> -- [Case Studies](https://mcconvil.github.io/IMS21_ML_Surveys/case_studies.html)
+
+<span style="color: #E6AC27;">3:05 pm - 3:15 pm ET</span> -- [Break](https://www.psychologytoday.com/us/blog/how-be-yourself/202006/7-strategies-maximize-break-while-working-home)
+
+<span style="color: #E6AC27;">3:15 pm - 4:00 pm ET</span> -- [Applications with `R`](https://mcconvil.github.io/IMS21_ML_Surveys/mase_R.html)
+
+]

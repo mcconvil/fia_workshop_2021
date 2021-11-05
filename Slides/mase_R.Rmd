@@ -48,13 +48,13 @@ background-color: #e9ecef
 
 ## Applications in `R` with `mase`
 
-#### A Data Science Approach to Official Statistics Estimation: Leveraging the Power of Machine Learning Models
+#### A Data Science Approach to Model-Assisted Estimation
 
-#### 2021 International Methodology Symposium
+#### 2021 FIA Workshop
 
 #### Kelly McConville
 
-#### October 14, 2021
+#### November 8th, 2021
 
 ]
 
@@ -367,7 +367,7 @@ background-size: contain
 
 ---
 
-background-image: url("img/nadine-shaabana-qAcqRgWQemM-unsplash.jpg")
+background-image: url("img/path_forward.jpg")
 background-position: left
 background-size: contain
 
@@ -381,7 +381,7 @@ background-size: contain
 [Model-Assisted Survey Estimation with Modern Prediction Techniques](https://projecteuclid.org/journals/statistical-science/volume-32/issue-2/Model-Assisted-Survey-Estimation-with-Modern-Prediction-Techniques/10.1214/16-STS589.full) by Jay Breidt and Jean Opsomer: Wonderful overview article
 
 
-[Model Assisted Survey Sampling](https://www.springer.com/us/book/9780387406206) by Carl-Erik Särndal, Bengt Swensson, and Jan Wretman: Seminar textbook
+[Model Assisted Survey Sampling](https://www.springer.com/us/book/9780387406206) by Carl-Erik Särndal, Bengt Swensson, and Jan Wretman: Seminal textbook
 
 
 ]

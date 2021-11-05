@@ -37,7 +37,7 @@ library(tidyverse)
 
 
 class: center, middle, hide_logo
-background-image: url("img/louis-philippe-poitras-W-vPMF3vUK0-unsplash.jpg")
+background-image: url("img/waterfall.jpg")
 background-position: left
 background-size: contain
 background-color: #e9ecef
@@ -58,13 +58,13 @@ background-color: #e9ecef
 ## Deep Dive into the Generalized Regression Estimator
 
 
-#### A Data Science Approach to Official Statistics Estimation: Leveraging the Power of Machine Learning Models
+#### A Data Science Approach to Model-Assisted Estimation
 
-#### 2021 International Methodology Symposium
+#### 2021 FIA Workshop
 
 #### Kelly McConville
 
-#### October 14, 2021
+#### November 8th, 2021
 
 ]
 
