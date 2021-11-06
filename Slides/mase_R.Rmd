@@ -124,88 +124,119 @@ Where $m(\cdot)$ is:
 
 ---
 
-## Example Dataset: FIA Data in Idaho
-
-.left-column[
-
-```{r, echo = FALSE}
-```
-
-]
-
-.right-column[
+## Example Dataset: FIA Data and Auxiliary Data in Idaho
 
 
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(mase)
-dat <- readRDS(url("https://github.com/mcconvil/fia_workshop_2021/blob/main/data/IDdata.rds","rb"))
-dat <- readRDS("data/IDdata.rds")
-dat
+dat <- readRDS(url("https://mcconvil.github.io/fia_workshop_2021/data/IDdata.rds","rb"))
+glimpse(dat$pltassgn)
 ```
 
-]
+
 
 
 ---
 
-## Example Dataset: `pdxTrees`
+## Example Dataset: FIA Data in Idaho
 
-**Want to estimate the average diameter at breast height**
+**Want to estimate forest attributes in Kootenai County, Idaho**
 
-* Y = `DBH`
+* Y = `COUNT_TPA_ADJ`, `BA_TPA_ADJ`
 
-* Auxiliary data: X = `Tree_Height`, `Condition`, `Functional_Type`
-    + Known for every tree in the population
+* Auxiliary data: X = `tnt`, `tcc`, `dem`, `ppt`, `tmean`, `tmin01`
+    + Have pixel means too (population means)
 
-```{r}
-set.seed(44)
-samp_SRS <- sample_n(pop, 1000) %>%
-  select(DBH, Tree_Height, Condition, Functional_Type) %>%
-  mutate(pi = 1000/nrow(pop))
+* N = number of pixels
+
+* n = number of FIA plots
+
+```{r, eval = FALSE, echo = FALSE}
+dat$pltassgn %>%
+  group_by(COUNTYFIPS) %>%
+  summarize(mean = mean(COUNT_TPA_ADJ), n = n(),
+            median = median(COUNT_TPA_ADJ)) %>%
+  arrange(desc(mean))
 ```
 
----
-
-## Exploratory Data Analysis
-
 ```{r}
-ggplot(data = samp_SRS, 
-       mapping = aes(x = Tree_Height, 
-                     y = DBH, 
-                     color = Condition,
-                     size = 1/pi)) +
-  geom_point(alpha = 0.2) +
-  geom_smooth(method = "lm", se = FALSE)
+samp <- filter(dat$pltassgn, COUNTYFIPS == 16055) 
+dim(samp)
+pop <- filter(dat$dunitzonal, COUNTYFIPS == 16055) 
+pop
 ```
 
 ---
 
 ## Exploratory Data Analysis
 
+```{r, echo = FALSE, out.width='90%'}
+library(gridExtra)
+p1 <- ggplot(data = samp, 
+       mapping = aes(x = elev, 
+                     y = BA_TPA_ADJ, 
+                     color = factor(tnt))) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(legend.position = "bottom")
+p2 <- ggplot(data = samp, 
+       mapping = aes(x = elev, 
+                     y = COUNT_TPA_ADJ, 
+                     color = factor(tnt))) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(legend.position = "bottom")
+grid.arrange(p1, p2, ncol = 2)
+```
 
-```{r}
-ggplot(data = samp_SRS, 
-       mapping = aes(x = Condition, 
-                     y = DBH, 
-                     fill = Condition)) +
+---
+
+## Exploratory Data Analysis
+
+```{r, echo = FALSE, out.width='90%'}
+library(gridExtra)
+p1 <- ggplot(data = samp, 
+       mapping = aes(x = tcc, 
+                     y = BA_TPA_ADJ, 
+                     color = factor(tnt))) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(legend.position = "bottom")
+p2 <- ggplot(data = samp, 
+       mapping = aes(x = tcc, 
+                     y = COUNT_TPA_ADJ, 
+                     color = factor(tnt))) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme(legend.position = "bottom")
+grid.arrange(p1, p2, ncol = 2)
+```
+
+
+
+---
+
+## Exploratory Data Analysis
+
+
+```{r, echo = FALSE, out.width='90%'}
+p1 <- ggplot(data = samp, 
+       mapping = aes(x = factor(tnt), 
+                     y = BA_TPA_ADJ,
+                     fill = factor(tnt))) +
   geom_boxplot() +
-  guides(fill = FALSE)
-```
+  guides(fill = "none")
 
----
-
-## Exploratory Data Analysis
-
-
-```{r}
-ggplot(data = samp_SRS, 
-       mapping = aes(x = Functional_Type, 
-                     y = DBH, 
-                     fill = Functional_Type)) +
+p2 <- ggplot(data = samp, 
+       mapping = aes(x = factor(tnt), 
+                     y = COUNT_TPA_ADJ,
+                     fill = factor(tnt))) +
   geom_boxplot() +
-  guides(fill = FALSE)
+  guides(fill = "none")
+grid.arrange(p1, p2, ncol = 2)
+
 ```
 
 ---
@@ -215,8 +246,30 @@ ggplot(data = samp_SRS,
 ```{r}
 library(mase)
 
-horvitzThompson(y = samp_SRS$DBH,
-          pi = samp_SRS$pi, var_est = TRUE)
+horvitzThompson(y = samp$BA_TPA_ADJ, N = pop$npixels,
+                var_est = TRUE)
+```
+
+---
+
+### Post-Stratified Estimator
+
+```{r}
+xpop <- filter(dat$stratalut, COUNTYFIPS == 16055) %>%
+  select(tnt, Prop)
+xpop
+```
+
+---
+
+### Post-Stratified Estimator
+
+```{r}
+postStrat(y = samp$BA_TPA_ADJ, N = pop$npixels,
+          xsample = samp$tnt, xpop = xpop,
+          datatype = "means",
+          var_est = TRUE,
+          var_method = "SRSunconditional")
 ```
 
 ---
@@ -224,13 +277,14 @@ horvitzThompson(y = samp_SRS$DBH,
 ### Generalized Regression Estimator
 
 ```{r}
-xsample <- select(samp_SRS, Condition, Tree_Height) %>%
+xsample <- select(samp, tcc, elev, ppt, tmean, tmin01) %>%
   as.data.frame()
 
 xpop <- select(pop, names(xsample))
 
-greg(y = samp_SRS$DBH, xsample = xsample, xpop = xpop,
-          pi = samp_SRS$pi, var_est = TRUE, datatype = "raw")
+greg(y = samp$BA_TPA_ADJ, N = pop$npixels,
+     xsample = xsample, xpop = xpop,
+     var_est = TRUE, datatype = "means")
 ```
 
 
@@ -239,101 +293,42 @@ greg(y = samp_SRS$DBH, xsample = xsample, xpop = xpop,
 ### Generalized Regression Estimator with Elastic Net
 
 ```{r}
-gregElasticNet(y = samp_SRS$DBH, xsample = xsample, xpop = xpop,
-          pi = samp_SRS$pi, var_est = TRUE, datatype = "raw")
+gregElasticNet(y = samp$BA_TPA_ADJ, N = pop$npixels,
+     xsample = xsample, xpop = xpop,
+     var_est = FALSE, datatype = "means", alpha = 0.5)
 ```
 
----
-
-### Generalized Regression Estimator with Regression Trees
-
-```{r}
-xsample <- select(samp_SRS, Functional_Type, Tree_Height) %>%
-  mutate(Functional_Type = factor(Functional_Type)) %>%
-  as.data.frame() 
-
-xpop <- select(pop, names(xsample)) %>%
-  mutate(Functional_Type = factor(Functional_Type)) %>%
-  as.data.frame()
-
-est <- gregTree(y = samp_SRS$DBH, xsample = xsample, 
-                xpop = xpop, pi = samp_SRS$pi)
-```
-
----
-
-### Generalized Regression Estimator with Regression Trees
-
-
-```{r}
-est$tree
-```
 
 
 ---
 
-### Aggregated Auxiliary Information
+### Other Features
 
-* Don't have unit level data for the non-sampled units
-* Just have aggregated data
+* Non-aggregated population level data
+    + Needed for `gregTree()`
 
-```{r, echo = FALSE}
-library(recipes)
+--
 
-xpop <- select(pop, Condition, Tree_Height)
+* Categorical response variable
 
-xpop_agg <- recipe(~ Condition + Tree_Height, data = xpop) %>%
-  step_dummy(Condition) %>%
-  prep(training = xpop) %>%
-  bake(new_data = NULL) %>%
-  summarise_all(mean)
-```
-
-```{r}
-xpop_agg
-```
-
-
-```{r}
-library(recipes)
-
-xsample <- recipe(~ Condition + Tree_Height, data = samp_SRS) %>%
-  step_dummy(Condition) %>%
-  prep(training = samp_SRS) %>%
-  bake(new_data = NULL) %>%
-  as.data.frame()
-
-xsample %>%
-  summarise_all(mean)
-```
-
----
-
-### Aggregated Auxiliary Information
-
-```{r}
-greg(y = samp_SRS$DBH, xsample = xsample, xpop = xpop_agg,
-          pi = samp_SRS$pi, var_est = TRUE, datatype = "means")
-```
-
-
----
-
-### Categorical Response Variable
-
-```{r}
-samp_SRS <- mutate(samp_SRS, B_Type = if_else(Functional_Type %in%
-                                      c("BD", "BE"),  1, 0)) 
-
-xsample <- select(samp_SRS, Condition, Tree_Height) %>%
-  as.data.frame()
-
-xpop <- select(pop, names(xsample))
-
-greg(y = samp_SRS$B_Type, xsample = xsample, xpop = xpop,
-          pi = samp_SRS$pi, var_est = TRUE, datatype = "raw",
+```{r, eval = FALSE}
+greg(y = samp$BA_TPA_ADJ, N = pop$npixels,
+     xsample = xsample, xpop = xpop,
+     var_est = FALSE, datatype = "means",
      model = "logistic")
 ```
+
+--
+
+* Can handle non-equal probability of selection
+
+```{r, eval = FALSE}
+greg(y = samp$BA_TPA_ADJ, N = pop$npixels,
+     xsample = xsample, xpop = xpop,
+     var_est = FALSE, datatype = "means",
+     model = "logistic", pi = samp$INCLUSION_PROBS)
+```
+
 
 ---
 
