@@ -124,25 +124,35 @@ Where $m(\cdot)$ is:
 
 ---
 
-## Example Dataset: FIA Data in Idaho
+## Example Dataset: `pdxTrees`
 
 .left-column[
 
 ```{r, echo = FALSE}
+knitr::include_graphics("img/pdxHexSticker.png")
 ```
 
 ]
 
 .right-column[
 
+`r emo::ji("deciduous_tree")` Data from Portland, OR Tree Inventory Project
+
+`r emo::ji("deciduous_tree")` [Vignette](https://cran.r-project.org/web/packages/pdxTrees/vignettes/pdxTrees-vignette.html)
+
+`r emo::ji("deciduous_tree")` [CRAN](https://cran.r-project.org/web/packages/pdxTrees/)
+
+`r emo::ji("deciduous_tree")` [GitHub](https://github.com/mcconvil/pdxTrees)
 
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
-library(mase)
-dat <- readRDS(url("https://github.com/mcconvil/fia_workshop_2021/blob/main/data/IDdata.rds","rb"))
-dat <- readRDS("data/IDdata.rds")
-dat
+library(pdxTrees)
+pop <- get_pdxTrees_parks() %>%
+  replace_na(list(Functional_Type = "Unknown")) %>%
+  drop_na(DBH, Tree_Height, Condition,
+          Functional_Type)
+nrow(pop)
 ```
 
 ]
