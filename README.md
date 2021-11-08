@@ -10,7 +10,7 @@ FIA produces estimates of numerous forest attributes in a variety of domains, wi
 This workshop will introduce participants to one modern, model-assisted approach to survey estimation, where predictive models serve as the key link between the FIA plot data and auxiliary data. This method will cover a broad class of predictive models, including generalized linear models, regularized (elastic net) regression, and regression trees. The workshop will also include demonstrations of how to estimate forest attributes in the statistical software R, using the `mase` package.  
 
 
-[This `R` script](https://mcconvil.github.io/IMS21_ML_Surveys/mase_R.R) contains all the code used in the `mase` slide deck.
+[This `R` script](https://mcconvil.github.io/fia_workshop_2021/data/mase_R.R) contains all the code used in the `mase` slide deck.
 
 
 ## Outline
