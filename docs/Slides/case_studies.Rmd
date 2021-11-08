@@ -72,7 +72,7 @@ knitr::include_graphics("img/fs.png")
 
 Focusing on Daggett County, Utah:
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.width= "75%"}
 knitr::include_graphics("img/data_needs2.004.jpeg")
 ```
 
@@ -587,6 +587,13 @@ background-color: #CFF09E
 ---
 
 class: center, middle
+background-image: url("img/rainbow.jpg")
+background-position: left
+background-size: contain
 background-color: #CFF09E
 
-## Questions?
+.pull-right[
+
+# Questions?
+
+]

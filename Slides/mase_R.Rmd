@@ -63,9 +63,9 @@ background-color: #e9ecef
 ---
 
 
-## Model-Assisted Survey Estimation
+### Model-Assisted Survey Estimation
 
-**Goal**: Estimate $t_y = \sum_{i \in U} y_i$.
+**Goal**: Estimate $\mu_y = \frac{1}{N}\sum_{i \in U} y_i$.
 
 
 Data we have:
@@ -111,7 +111,7 @@ install.packages("mase")
 ## Estimators in mase
 
 
-$$\hat{t}_y = \sum_{i \in U} \hat{m}(x_i) + \sum_{i \in s} \frac{y_i - \hat{m}(x_i)}{\pi_i}$$
+$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(x_i) + \frac{1}{N} \sum_{i \in s} \frac{y_i - \hat{m}(x_i)}{\pi_i}$$
 
 Where $m(\cdot)$ is:
 

@@ -43,9 +43,9 @@ background-color: #e9ecef
 ---
 
 
-## Model-Assisted Survey Estimation
+### Model-Assisted Survey Estimation
 
-**Goal**: Estimate `\(t_y = \sum_{i \in U} y_i\)`.
+**Goal**: Estimate `\(\mu_y = \frac{1}{N}\sum_{i \in U} y_i\)`.
 
 
 Data we have:
@@ -90,7 +90,7 @@ install.packages("mase")
 ## Estimators in mase
 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(x_i) + \sum_{i \in s} \frac{y_i - \hat{m}(x_i)}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(x_i) + \frac{1}{N} \sum_{i \in s} \frac{y_i - \hat{m}(x_i)}{\pi_i}$$`
 
 Where `\(m(\cdot)\)` is:
 
@@ -353,14 +353,14 @@ gregElasticNet(y = samp$BA_TPA_ADJ, N = pop$npixels,
 
 ```
 ## $pop_total
-## [1] 40054644
+## [1] 40146732
 ## 
 ## $pop_mean
 ## [1] 96
 ## 
 ## $coefficients
 ## (Intercept)         tcc        elev         ppt       tmean      tmin01 
-##     -23.375       0.369       0.037       0.078       0.000       0.000
+##     -22.416       0.341       0.037       0.080       0.000       0.000
 ```
 
 

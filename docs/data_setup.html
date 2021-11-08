@@ -103,7 +103,7 @@ class: center
 &lt;img src="img/response.jpeg" width="1482" /&gt;
 
 
-`\(t_y = \sum_{i \in U} y_i\)`
+`\(\mu_y = \frac{1}{N}\sum_{i \in U} y_i\)`
 
 
 ---
@@ -153,9 +153,11 @@ A sample is taken and you have access to the following data for estimation.
 
 --
 
-One option: `\(\hat{t}_y = \sum_{i \in s} \frac{y_i}{\pi_i}\)`
+Horvitz-Thompson Estimator: `\(\hat{\mu}_y = \frac{1}{N}\sum_{i \in s} \frac{y_i}{\pi_i}\)`
 
-(Horvitz-Thompson Estimator)
+--
+
+For FIA's design: `\(\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i\)`
 
 
 ---
@@ -168,7 +170,7 @@ Another option: Use the sample to .orange2[**build**] a model and then .orange2[
 
 &lt;img src="img/model_fits.jpeg" width="1484" /&gt;
 
-`\(\hat{t}_y = \sum_{i \in s} y_i + \sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})\)`
+`\(\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i + \frac{1}{N-n}\sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})\)`
 
 ---
 
@@ -176,7 +178,7 @@ class: center
 
 ### Estimation Set-up
 
-Estimator: `\(\hat{t}_y = \sum_{i \in s} y_i + \sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})\)`
+Estimator: `\(\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i + \frac{1}{N-n}\sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})\)`
 
 &lt;img src="img/model_fits.jpeg" width="1484" /&gt;
 
@@ -197,7 +199,23 @@ class: center
 
 Model-assisted estimator: 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{N} \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+
+
+---
+
+class: center
+
+### Estimation Set-up
+
+**Another approach:** Use a bias-correction term.
+
+&lt;img src="img/model_fits.jpeg" width="1484" /&gt;
+
+
+For FIA's design: 
+
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{n} \sum_{i \in s} y_i - \hat{m}(\boldsymbol{x_i})$$`
 
 
 ---
@@ -226,7 +244,7 @@ class: center
 
 Focusing on Daggett County, Utah:
 
-&lt;img src="img/data_needs2.004.jpeg" width="1402" /&gt;
+&lt;img src="img/data_needs2.004.jpeg" width="70%" /&gt;
 
 .pull-left[
 

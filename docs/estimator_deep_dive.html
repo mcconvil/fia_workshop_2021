@@ -77,7 +77,7 @@ class: center
 
 Generalized Regression Estimator: 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
 
 
 &lt;img src="img/all_data.jpeg" width="1489" /&gt;
@@ -117,25 +117,25 @@ Suppose we had a "method" for predicting `\(y\)`, `\(m(\cdot)\)`, that does not 
 
 --
 
-`$$\hat{t}_y = \sum_{i \in U} m(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} m(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
 
 ---
 
 ### Difference Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} m(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} m(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
 
 
 --
 
-Is design unbiased: `\(E(\hat{t}_y) = t_y\)`
+Is design unbiased: `\(E(\hat{\mu}_y) = \mu_y\)`
 
 --
 
 Has a simple variance equation:
 
-`$$\mbox{V}\left(\hat{t}_y\right) = \underset{i, j \in U}{\sum \sum} (\pi_{ij} - \pi_i \pi_j) \frac{\left(y_i - m(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - m(\boldsymbol{x}_j)\right)}{\pi_j}$$`
+`$$\mbox{V}\left(\hat{\mu}_y\right) = \frac{1}{N^2}\underset{i, j \in U}{\sum \sum} (\pi_{ij} - \pi_i \pi_j) \frac{\left(y_i - m(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - m(\boldsymbol{x}_j)\right)}{\pi_j}$$`
 
 where `\(\pi_{ij} = P(i, j \in s)\)`.
 
@@ -144,7 +144,7 @@ where `\(\pi_{ij} = P(i, j \in s)\)`.
 
 Which has a design unbiased estimator:
 
-`$$\hat{\mbox{V}}\left(\hat{t}_y\right) = \underset{i, j \in s}{\sum \sum} \frac{(\pi_{ij} - \pi_i \pi_j)}{\pi_{ij}} \frac{\left(y_i - m(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - m(\boldsymbol{x}_j)\right)}{\pi_j}$$`
+`$$\hat{\mbox{V}}\left(\hat{\mu}_y\right) = \frac{1}{N^2}\underset{i, j \in s}{\sum \sum} \frac{(\pi_{ij} - \pi_i \pi_j)}{\pi_{ij}} \frac{\left(y_i - m(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - m(\boldsymbol{x}_j)\right)}{\pi_j}$$`
 
 &lt;!-- Discuss difference estimator and its variance estimator. Unbiased. --&gt;
 
@@ -157,7 +157,7 @@ Which has a design unbiased estimator:
 ### Difference Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} m(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} m(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
 
 
 
@@ -174,7 +174,7 @@ And, even better, under mild conditions, it is asymptotically normal!
 ### Difference Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} m(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} m(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - m(\boldsymbol{x_i})}{\pi_i}$$`
 
 
 
@@ -185,14 +185,14 @@ But, we rarely have a known `\(m(\cdot)\)` and must therefore estimate it based 
 ### Generalized Regression Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
 
 ---
 
 ### The Generalized Regression Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
 with assisting model:
 
 $$
@@ -207,7 +207,7 @@ $$
 ### The Generalized Regression Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
 
 --
 
@@ -215,7 +215,7 @@ Also goes by .orange2[The Empirical Difference Estimator] and .orange2[The Model
 
 --
 
-Is .orange2[asymptotically] unbiased: `\(E(\hat{t}_y) \rightarrow t_y\)`
+Is .orange2[asymptotically] unbiased: `\(E(\hat{\mu}_y) \rightarrow \mu_y\)`
 
 --
 
@@ -225,7 +225,7 @@ Doesn't have an exact design variance expression
 
 Estimated variance based on formula from the Difference Estimator:
 
-`$$\hat{\mbox{V}}\left(\hat{t}_y\right) = \underset{i, j \in s}{\sum \sum} \frac{(\pi_{ij} - \pi_i \pi_j)}{\pi_{ij}} \frac{\left(y_i - \hat{m}(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - \hat{m}(\boldsymbol{x}_j)\right)}{\pi_j}$$`
+`$$\hat{\mbox{V}}\left(\hat{\mu}_y\right) = \frac{1}{N^2}\underset{i, j \in s}{\sum \sum} \frac{(\pi_{ij} - \pi_i \pi_j)}{\pi_{ij}} \frac{\left(y_i - \hat{m}(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - \hat{m}(\boldsymbol{x}_j)\right)}{\pi_j}$$`
 
 
 
@@ -261,7 +261,7 @@ An incomplete list includes:
 ### The Generalized Regression Estimator
 
 
-`$$\hat{t}_y = \sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \hat{m}(\boldsymbol{x_i}) + \frac{1}{N}\sum_{i \in s} \frac{y_i - \hat{m}(\boldsymbol{x_i})}{\pi_i}$$`
 Start with linear regression assisting model:
 
 --
@@ -280,7 +280,7 @@ where `\(\epsilon_i \sim (0, \sigma^2)\)`.
 
 So then 
 
-`$$\hat{t}_y = \sum_{i \in U} \boldsymbol{x}_i^T \hat{\boldsymbol{\beta}} + \sum_{i \in s} \frac{y_i - \boldsymbol{x}_i^T \hat{\boldsymbol{\beta}}}{\pi_i}$$`
+`$$\hat{\mu}_y = \frac{1}{N}\sum_{i \in U} \boldsymbol{x}_i^T \hat{\boldsymbol{\beta}} + \frac{1}{N}\sum_{i \in s} \frac{y_i - \boldsymbol{x}_i^T \hat{\boldsymbol{\beta}}}{\pi_i}$$`
 
 with
 
@@ -308,7 +308,8 @@ Special cases:
 Under the linear model, can be written as:
 
 `\begin{align*}
-\hat{t}_{y} =  \sum_{i \in s} \left[1 +  \left(\sum_{j \in U} \boldsymbol{x}_j - \sum_{j \in s} \frac{\boldsymbol{x}_j}{\pi_j}\right)^{T} \left( \sum_{j \in s} \frac{\boldsymbol{x}_j \boldsymbol{x}_j^{T}}{\pi_j} \right)^{-1} \boldsymbol{x}_i \right] \frac{y_i}{\pi_i} = \sum_{i \in s} w_i y_i
+\hat{\mu}_{y} &amp;=  \frac{1}{N}\sum_{i \in s} \left[1 +  \left(\sum_{j \in U} \boldsymbol{x}_j - \sum_{j \in s} \frac{\boldsymbol{x}_j}{\pi_j}\right)^{T} \left( \sum_{j \in s} \frac{\boldsymbol{x}_j \boldsymbol{x}_j^{T}}{\pi_j} \right)^{-1} \boldsymbol{x}_i \right] \frac{y_i}{\pi_i}\\
+&amp;= \sum_{i \in s} w_i y_i
 \end{align*}`
 
 --
@@ -369,7 +370,7 @@ Remember that the model-assisted estimator is asymptotically unbiased
 BUT the .orange2[precision] of the estimator depends on the predictive quality of model!
 
 
-`$$\hat{\mbox{V}}\left(\hat{t}_y\right) = \underset{i, j \in s}{\sum \sum} \frac{(\pi_{ij} - \pi_i \pi_j)}{\pi_{ij}} \frac{\left(y_i - \hat{m}(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - \hat{m}(\boldsymbol{x}_j)\right)}{\pi_j}$$`
+`$$\hat{\mbox{V}}\left(\hat{\mu}_y\right) = \frac{1}{N^2}\underset{i, j \in s}{\sum \sum} \frac{(\pi_{ij} - \pi_i \pi_j)}{\pi_{ij}} \frac{\left(y_i - \hat{m}(\boldsymbol{x}_i)\right)}{\pi_i}\frac{\left(y_j - \hat{m}(\boldsymbol{x}_j)\right)}{\pi_j}$$`
 
 ---
 
@@ -385,13 +386,19 @@ Determine a non-response model and account for it in the estimator.
 
 
 
-&lt;img src="img/nonresponse.jpg" width="15%" style="float:left; padding:10px" /&gt;
+&lt;img src="img/nonresponse.jpg" width="25%" style="float:left; padding:10px" /&gt;
 
 ### Nonresponse
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 Determine a non-response model and account for it in the estimator.
 
 #### Strategies:
+
+--
 
 1. Do nothing: Treat the respondents as the non-respondents.
 
