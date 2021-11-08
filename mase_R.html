@@ -353,14 +353,14 @@ gregElasticNet(y = samp$BA_TPA_ADJ, N = pop$npixels,
 
 ```
 ## $pop_total
-## [1] 40146732
+## [1] 41352684
 ## 
 ## $pop_mean
-## [1] 96
+## [1] 99
 ## 
 ## $coefficients
 ## (Intercept)         tcc        elev         ppt       tmean      tmin01 
-##     -22.416       0.341       0.037       0.080       0.000       0.000
+##      -8.006       0.000       0.029       0.093       0.000       0.000
 ```
 
 
@@ -450,11 +450,12 @@ background-size: contain
 
 .pull-right[
 
-### `FIESTA`
 
-* `mase` is integrated into `FIESTA`
+* `FIESTA` (Forest Inventory ESTimation and Analysis) is an `R` package that loads, wrangles, and models FIA (or other forest inventory data) in `R`.
 
-* Tracey and Grayson are working on a public version of `FIESTA`
+* Many `R` packages from CRAN are integrated into `FIESTA` for modeling purposes. Including: `mase` (for model-assisted estimation), `sae` (for small area estimation), and `hbsae` (for hierarchical Bayesian small area estimation)
+
+* `FIESTA` is very close to public release. Tracey and Grayson are working hard at getting `FIESTA` ready.
 
 * More details to come!
 

@@ -383,11 +383,12 @@ background-size: contain
 
 .pull-right[
 
-### `FIESTA`
 
-* `mase` is integrated into `FIESTA`
+* `FIESTA` (Forest Inventory ESTimation and Analysis) is an `R` package that loads, wrangles, and models FIA (or other forest inventory data) in `R`.
 
-* Tracey and Grayson are working on a public version of `FIESTA`
+* Many `R` packages from CRAN are integrated into `FIESTA` for modeling purposes. Including: `mase` (for model-assisted estimation), `sae` (for small area estimation), and `hbsae` (for hierarchical Bayesian small area estimation)
+
+* `FIESTA` is very close to public release. Tracey and Grayson are working hard at getting `FIESTA` ready.
 
 * More details to come!
 
