@@ -170,7 +170,7 @@ Another option: Use the sample to .orange2[**build**] a model and then .orange2[
 
 &lt;img src="img/model_fits.jpeg" width="1484" /&gt;
 
-`\(\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i + \frac{1}{N-n}\sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})\)`
+`\(\hat{\mu}_y = \frac{1}{N}\left[\sum_{i \in s} y_i + \sum_{i \in U-s}  \hat{m}(\boldsymbol{x_i})\right]\)`
 
 ---
 
@@ -178,7 +178,7 @@ class: center
 
 ### Estimation Set-up
 
-Estimator: `\(\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i + \frac{1}{N-n}\sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})\)`
+Estimator: `\(\hat{\mu}_y = \frac{1}{N}\left[\sum_{i \in s} y_i + \sum_{i \in U-s}  \hat{m}(\boldsymbol{x_i})\right]\)`
 
 &lt;img src="img/model_fits.jpeg" width="1484" /&gt;
 

@@ -204,7 +204,7 @@ Another option: Use the sample to .orange2[**build**] a model and then .orange2[
 knitr::include_graphics("img/model_fits.jpeg")
 ```
 
-$\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i + \frac{1}{N-n}\sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})$
+$\hat{\mu}_y = \frac{1}{N}\left[\sum_{i \in s} y_i + \sum_{i \in U-s}  \hat{m}(\boldsymbol{x_i})\right]$
 
 ---
 
@@ -212,7 +212,7 @@ class: center
 
 ### Estimation Set-up
 
-Estimator: $\hat{\mu}_y = \frac{1}{n}\sum_{i \in s} y_i + \frac{1}{N-n}\sum_{i \in U-s} \hat{m}(\boldsymbol{x_i})$
+Estimator: $\hat{\mu}_y = \frac{1}{N}\left[\sum_{i \in s} y_i + \sum_{i \in U-s}  \hat{m}(\boldsymbol{x_i})\right]$
 
 ```{r, echo = FALSE}
 knitr::include_graphics("img/model_fits.jpeg")
